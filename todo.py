@@ -51,3 +51,11 @@ def remove_task(args):					 #タスクの削除
             print(f'Task removed: {task["task"]}')
             return
     print("Task not found.")
+
+def main():
+    parser = argparse.ArgumentParser(
+        description = "A simple command-line Todo manager"
+    )
+    subparsers = parser.add_subparsers(
+        dest = "command", required = True
+    )
