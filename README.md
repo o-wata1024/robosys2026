@@ -9,6 +9,9 @@
  © 2026 Wataru Ono
 
 # Todo Manager
+
+ ![test](https://github.com/o-wata1024/robosys2026/actions/workflows/test.yml/badge.svg)
+
 ## 概要
 
  Todo Managerは、ターミナル上でタスクを登録・管理するためのコマンドライン型Todo管理プログラムです。
