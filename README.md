@@ -8,8 +8,34 @@
     https://github.com/tarolab-cit/lectures/tree/main/robosys2026
  © 2026 Wataru Ono
 
-# ToDo Manager
- TODO Managerは、ターミナル上でタスクを登録・管理するためのコマンドライン型TODO管理プログラムです。
+# Todo Manager
+#概要
+ Todo Managerは、ターミナル上でタスクを登録・管理するためのコマンドライン型Todo管理プログラムです。
  
  タスクの追加、一覧表示、完了、削除などを簡単に行うことができます。
  登録したタスクはJSONファイルに保存されるため、プログラムを終了してもデータが保持されます。
+
+#使用方法
+#タスクの追加
+ python3 todo.py add "task"
+
+#タスク一覧の表示
+ python3 todo.py list
+
+#タスクの完了
+ python3 todo.py done 1 (リスト内で表示された数字で)
+
+#タスクの削除
+ python3 todo.py remove 1
+
+#タスク数の確認
+ python3 todo.py count
+
+#データの保存
+ タスクはホームディレクトリにある.todo.jsonに保存されます。
+
+#使用技術
+ ・Python3
+ ・argparse
+ ・json
+ ・pathlib
