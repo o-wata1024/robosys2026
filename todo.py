@@ -21,7 +21,7 @@ def add_task(args):					 #タスクの追加
     new_id = max([task["id"] for task in tasks], default = 0) + 1 #タスクのリストの最大値を1追加する
     tasks.append({ "id" : new_id, "task" : args.task})   #リストの末尾にタスクを追加
     save_tasks(tasks)					 #追加したタスクをファイルに保存
-    print(f"Taskk added: {args.task}")			 #id:Todoの番号 task:Todoの内容 args.task:コマンド入力で指定されたTodoの内容
+    print(f"Task added: {args.task}")			 #id:Todoの番号 task:Todoの内容 args.task:コマンド入力で指定されたTodoの内容
 
 def list_tasks(args):					 #Todoのリスト表示
     tasks = load_tasks()
@@ -78,5 +78,5 @@ def main():
     args = parser.parse_args()				 #入力されたコマンドを分析
     args.func(args)					 #選択された関数を実行
 
-    if __name__ == "__main__":				 #このファイルを実行したときにmainを呼び出す
-        main()
+if __name__ == "__main__":				 #このファイルを実行したときにmainを呼び出す
+    main()
