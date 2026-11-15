@@ -6,7 +6,7 @@ from pathlib import Path
 DATA_FILE = Path.home() / ".todo.json"
 
 def load_tasks(): 					 #タスクを読み込むファイルを定義
-    if not DATA_FILE.exists()
+    if not DATA_FILE.exists():
         return[]
 
     with open(DATA_FILE, "r", encoding = "utf-8") as f : #読み込んだファイルの文字コードをUTF-8にし、fとする
@@ -65,13 +65,13 @@ def main():
     add_parser.set_defaults(func=add_task)		 #addが選ばれたらadd_task関数を実行
 
     list_parser = subparsers.add_parser("list")
-    list_parser.set_defaults(func=list_task)
+    list_parser.set_defaults(func=list_tasks)
 
     done_parser = subparsers.add_parser("done")
     done_parser.add_argument("id", type = int)
     done_parser.set_defaults(func=done_task)
 
-    remove_parser = subparsers.remove_parser("remove")
+    remove_parser = subparsers.add_parser("remove")
     remove_parser.add_argument("id", type = int)
     remove_parser.set_defaults(func=remove_task)
 
