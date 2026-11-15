@@ -64,16 +64,16 @@ def main():
     add_parser.add_argument("task")			 #taskという引数を受け取る
     add_parser.set_defaults(func=add_task)		 #addが選ばれたらadd_task関数を実行
 
-    list_parser = subparsers.list_parser("list")
+    list_parser = subparsers.add_parser("list")
     list_parser.list_argument("task")
     list_parser.set_defaults(func=list_task)
 
-    done_parser = subparsers.done_parser("done")
-    done_parser.done_argument("task")
+    done_parser = subparsers.add_parser("done")
+    done_parser.add_argument("id", type = int)
     done_parser.set_defaults(func=done_task)
 
     remove_parser = subparsers.remove_parser("remove")
-    remove_parser.remove_argument("task")
+    remove_parser.add_argument("id", type = int)
     remove_parser.set_defaults(func=remove_task)
 
     args = parser.parse_args()				 #入力されたコマンドを分析
