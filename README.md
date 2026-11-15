@@ -37,10 +37,6 @@
 
  python3 todo.py remove 1
 
-### タスク数の確認
-
- python3 todo.py count
-
 ### データの保存
 
  タスクはホームディレクトリにある.todo.jsonに保存されます。
