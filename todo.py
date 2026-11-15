@@ -78,5 +78,5 @@ def main():
     args = parser.parse_args()				 #入力されたコマンドを分析
     args.func(args)					 #選択された関数を実行
 
-    if__name__=="__main__":				 #このファイルを実行したときにmainを呼び出す
+    if __name__ == "__main__":				 #このファイルを実行したときにmainを呼び出す
         main()
