@@ -59,3 +59,25 @@ def main():
     subparsers = parser.add_subparsers(
         dest = "command", required = True
     )
+
+    add_parser = subparsers.add_parser("add")		 #addというコマンドを作る
+    add_parser.add_argument("task")			 #taskという引数を受け取る
+    add_parser.set_defaults(func=add_task)		 #addが選ばれたらadd_task関数を実行
+
+    list_parser = subparsers.list_parser("list")
+    list_parser.list_argument("task")
+    list_parser.set_defaults(func=list_task)
+
+    done_parser = subparsers.done_parser("done")
+    done_parser.done_argument("task")
+    done_parser.set_defaults(func=done_task)
+
+    remove_parser = subparsers.remove_parser("remove")
+    remove_parser.remove_argument("task")
+    remove_parser.set_defaults(func=remove_task)
+
+    args = parser.parse_args()				 #入力されたコマンドを分析
+    args.func(args)					 #選択された関数を実行
+
+    if__name__=="__main__":				 #このファイルを実行したときにmainを呼び出す
+        main()
