@@ -20,8 +20,6 @@ out=$(seq 5 | ./plus)                  # 表の1行目: plusの出力を変数ou
 
 
 
-
-
 # TODOのテスト
 tmp=$(mktemp -d)
 trap 'rm -rf "$tmp"' EXIT
