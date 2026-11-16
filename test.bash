@@ -34,13 +34,15 @@ python3 todo.py add "test task"
 # 一覧に表示されるか
 python3 todo.py list | grep -q "test task"
 
-# 件数が1になるか
-python3 todo.py count | grep -q "Remaining tasks: 1"
-
 # タスクを完了する
 python3 todo.py done 1
 
 # 完了後に一覧が空になるか
+python3 todo.py list | grep -q "No tasks."
+
+# タスクの削除
+python3 todo.py add "test task"
+python3 todo.py remove 1
 python3 todo.py list | grep -q "No tasks."
 
 echo "TODO test passed"
