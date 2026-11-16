@@ -23,10 +23,13 @@
 
  以下のコマンドでリポジトリを取得してください。
  git clone https://github.com/o-wata1024/robosys2026.git
+
  cd robosys2026
 
  以下のコマンドでPython3がインストールされていることを確認してください。
+
  python3 --version
+
  本プログラムPython3の標準ライブラリを使用しているため、追加のライブラリをインストールする必要はありません。
 
 ## 使用方法
