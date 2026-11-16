@@ -18,7 +18,7 @@ def save_tasks(tasks):					 #タスクの保存を定義
 
 def reset_ids(tasks):					 #タスクのidの振り直し
     for i, task in enumerate(tasks, start = 1):
-        task[id] = i
+        task["id"] = i
 
 def add_task(args):					 #タスクの追加
     tasks = load_tasks()				 #保存されているTodoを読み込む
