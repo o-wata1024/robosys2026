@@ -16,6 +16,10 @@ def save_tasks(tasks):					 #タスクの保存を定義
     with open(DATA_FILE, "w", encoding = "utf-8") as f : #書き込みモード
         json.dump(tasks, f, ensure_ascii = False, indent = 4) #JSONファイルに書き込み
 
+def reset_ids(tasks):					 #タスクのidの振り直し
+    for i, task in enumerate(tasks, start = 1):
+        task[id] = i
+
 def add_task(args):					 #タスクの追加
     tasks = load_tasks()				 #保存されているTodoを読み込む
     new_id = max([task["id"] for task in tasks], default = 0) + 1 #タスクのリストの最大値を1追加する
@@ -37,6 +41,7 @@ def done_task(args):					 #タスク完了
     for task in tasks:					 #指定されたidとタスクのidが一致してるか
         if task["id"] == args.id:
             tasks.remove(task)				 #一致したタスクの削除
+            reset_ids(tasks)
             save_tasks(tasks)
             print(f'Task completed: {task["task"]}')
             return					 #指定されたタスクを消したら終了
@@ -47,6 +52,7 @@ def remove_task(args):					 #タスクの削除
     for task in tasks:
         if task["id"] == args.id:
             tasks.remove(task)
+            reset_ids(tasks)
             save_tasks(tasks)
             print(f'Task removed: {task["task"]}')
             return
