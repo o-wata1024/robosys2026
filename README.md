@@ -47,7 +47,7 @@
 
  出力例:ID  TASK
 
-1  task
+         1  task
 
 ### タスクの完了
 
