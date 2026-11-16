@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+# SPDX-FileCopyrightText: 2026 Wataru Ono
+# SPDX-License-Identifier: BSD-3-Clause
+
 import argparse
 import json
 from pathlib import Path
